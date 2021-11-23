@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  deno:
+    image: denoland/deno:1.16.2
+    volumes: 
+      - ./app:/app
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c   "deno run --allow-net ./app/index.ts"
